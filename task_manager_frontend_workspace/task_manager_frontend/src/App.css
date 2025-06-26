@@ -1,0 +1,159 @@
+/* Minimalistic color palette for task manager */
+:root {
+  --primary: #1976d2;
+  --secondary: #424242;
+  --accent: #ff9800;
+  --background: #ffffff;
+  --text: #222222;
+  --border: #e0e0e0;
+}
+
+body {
+  background: var(--background);
+}
+
+.task-app {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.tm-header {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+.tm-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.tm-main {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  margin: 2rem auto 0 auto;
+  padding: 2rem 2rem 3rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(66, 66, 66, 0.08);
+}
+
+.tm-add-row {
+  display: flex;
+  gap: 0.55rem;
+  margin-bottom: 1.7rem;
+}
+
+.tm-input {
+  flex: 1;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: 1.5px solid var(--primary);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.tm-input:focus {
+  border-color: var(--accent);
+}
+
+.tm-add-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.06);
+}
+
+.tm-add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tm-add-btn:hover:not(:disabled) {
+  background: #ffa726;
+}
+
+.tm-task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tm-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary);
+  color: #fff;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  transition: background 0.18s;
+  box-shadow: 0 1px 6px rgba(33,33,33,0.04);
+}
+
+.tm-task-text {
+  flex: 1;
+  text-align: left;
+  word-break: break-word;
+}
+
+.tm-delete-btn {
+  background: none;
+  color: var(--accent);
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  margin-left: 0.8rem;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tm-delete-btn:hover, .tm-delete-btn:focus {
+  background: rgba(255,152,0,0.1);
+  color: #f57c00;
+  outline: none;
+}
+
+.tm-empty-state {
+  color: var(--primary);
+  background: #f6f9ff;
+  padding: 1.3rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 600px) {
+  .tm-main {
+    max-width: 99vw;
+    padding: 1.1rem 0.7rem 2rem 0.7rem;
+  }
+  .tm-header {
+    padding: 1.2rem 0 0.8rem 0;
+  }
+  .tm-title {
+    font-size: 1.38rem;
+  }
+}
